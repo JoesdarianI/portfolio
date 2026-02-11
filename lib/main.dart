@@ -38,6 +38,8 @@ class PortfolioPage extends StatelessWidget {
     'JavaScript',
     'Java',
     'Git & GitHub',
+    'Kotlin',
+    'Swift',
   ];
 
   static const _projects = <_Project>[
