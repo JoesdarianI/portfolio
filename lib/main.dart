@@ -47,6 +47,18 @@ class PortfolioPage extends StatelessWidget {
       stack:
           'Flutter, Firebase, N8n, Express.js, FCM, Cross Platform(IOS, Android, Web)',
     ),
+    _Project(
+      title: 'E-commerce app',
+      description: 'Basic ecommerce app with java and sqlite',
+      stack: "Java, SQLITE",
+    ),
+
+    _Project(
+      title: 'MM Inventory',
+      description:
+          'Basic inventory app with stock monitoring and saving user location\n(https://github.com/mmstationary/mitramedia_inventory)',
+      stack: "Flutter, Firestore, FCM, Nodejs(Sending OTP)",
+    ),
   ];
 
   @override
@@ -140,7 +152,11 @@ class PortfolioPage extends StatelessWidget {
                         SizedBox(height: 8),
                         _ContactRow(label: 'Phone', value: '089653618016'),
                         SizedBox(height: 8),
-
+                        _ContactRow(
+                          label: 'Github',
+                          value: 'https://github.com/JoesdarianI',
+                        ),
+                        SizedBox(height: 8),
                         _ContactRow(
                           label: 'LinkedIn',
                           value:
@@ -244,9 +260,9 @@ class _ContactRow extends StatelessWidget {
 
   void _copy(BuildContext context) {
     Clipboard.setData(ClipboardData(text: value));
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('$label copied')),
-    );
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(SnackBar(content: Text('$label copied')));
   }
 
   @override
@@ -261,9 +277,9 @@ class _ContactRow extends StatelessWidget {
             Expanded(
               child: RichText(
                 text: TextSpan(
-                  style: Theme.of(
-                    context,
-                  ).textTheme.bodyLarge?.copyWith(color: const Color(0xFF2F3F49)),
+                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                    color: const Color(0xFF2F3F49),
+                  ),
                   children: [
                     TextSpan(
                       text: '$label: ',
